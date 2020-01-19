@@ -1,0 +1,202 @@
+.App {
+  text-align: center;
+  background-color: rgb(206, 203, 203);
+}
+
+#singleQuestionWrap {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+#header-container {
+  width: 100%;
+  height: 70px;
+  /* background-color: rgb(176, 216, 96); */
+  background-color: #2ca58d;
+  color: white;
+  display: flex;
+}
+
+#nav-box {
+  display: flex;
+  width: 180px;
+  height: 40px;
+  position: relative;
+
+  justify-content: space-around;
+  margin-top: 12px;
+  margin-left: 70px;
+}
+
+.header-buttons {
+  /* background-color: rgb(160, 207, 32); */
+  background-color: #84bc9c;
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+#upgrade-button {
+  position: relative;
+  height: 50px;
+  width: 90px;
+  /* background-color: rgb(255, 210, 200); */
+  background-color: #f46197;
+  margin-left: 60%;
+  margin-top: 8px;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  font-family: sans-serif;
+  box-shadow: white 3px;
+}
+
+#login {
+  margin-left: 15px;
+  height: 50px;
+  width: 70px;
+  background-color: #f46197;
+  border-radius: 8px;
+  font-weight: bold;
+  font-family: sans-serif;
+  box-shadow: white 3px;
+  color: white;
+  margin-top: 8px;
+}
+#mainpage {
+  height: 120px;
+  width: 100vw;
+}
+img {
+  height: auto;
+  width: 100vw;
+}
+
+#green-box {
+  height: 320px;
+  width: 450px;
+  background-color: #2ca58d;
+  opacity: 70%;
+  border-radius: 12px;
+  position: absolute;
+}
+
+#editButton {
+  margin-top: 10px;
+  width: 70px;
+  height: 25px;
+  border-radius: 15px;
+  background-color: #bfd7ea;
+  font-weight: bold;
+}
+
+#card-container {
+  height: 320px;
+  width: 450px;
+  color: black;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#white-card {
+  height: 200px;
+  width: 300px;
+  background-color: white;
+  margin: auto;
+  z-index: 1;
+  vertical-align: middle;
+}
+
+#data-question {
+  margin-top: 80px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+}
+
+#arrowButton-container {
+  z-index: 1;
+  width: 450px;
+  margin-bottom: 20px;
+  margin-top: -25px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#count {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.next-button {
+  width: 70px;
+  border-radius: 15px;
+  background-color: #bfd7ea;
+  font-weight: bold;
+}
+
+.singleQuestionWrap {
+  text-align: center;
+  margin-left: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.oneBoxContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#deleteList {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 450px;
+  margin-top: 40px;
+}
+
+li {
+  font-size: 12px;
+  color: black;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.delete-button {
+  opacity: 80%;
+  border-radius: 5px;
+  font-size: 10px;
+  background-color: #bfd7ea;
+}
+
+#addBoxWrap {
+  display: flex;
+  justify-content: space-around;
+  width: 450px;
+  background-color: #84bc9c;
+  border-radius: 10px;
+  height: 90px;
+  align-items: center;
+  margin-top: 15px;
+  opacity: 70%;
+}
+
+.addNewCardInput {
+  height: 50px;
+  width: 180px;
+  border-radius: 5px;
+  font-size: 12px;
+  background-color: transparent;
+}
+
+#addButton {
+  opacity: 80%;
+  border-radius: 5px;
+  font-size: 10px;
+  background-color: #bfd7ea;
+}
