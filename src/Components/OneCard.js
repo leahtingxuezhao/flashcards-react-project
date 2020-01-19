@@ -12,6 +12,7 @@ class OneCard extends Component {
     this.state.index === this.props.data.length - 1
       ? this.setState({ index: 0 })
       : this.setState({ index: this.state.index + 1 });
+    this.setState({ count: 0 });
   };
 
   handleClickMinus = () => {
@@ -20,19 +21,27 @@ class OneCard extends Component {
           index: this.props.data.length - 1
         })
       : this.setState({ index: this.state.index - 1 });
+    this.setState({ count: 0 });
   };
 
   render() {
     const { data } = this.props;
     const { index } = this.state;
-
     console.log(data[index]);
+    console.log(this.state.count);
     return (
       <div className="oneBoxContainer">
         <div id="green-box"></div>
         <div id="card-container">
-          <div id="white-card">
-            <p id="data-question">{data[index].question}</p>
+          <div id="main-container">
+            <div id="the-card">
+              <div id="front-card">
+                <p id="theFront">{data[index].question}</p>
+              </div>
+              <div id="back-card">
+                <p id="theBack">{data[index].answer}</p>
+              </div>
+            </div>
           </div>
           <div id="arrowButton-container">
             <button

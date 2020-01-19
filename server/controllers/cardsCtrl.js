@@ -28,6 +28,7 @@ module.exports = {
       answer
     };
     id++;
+    console.log("cardObj :", cardObj);
     data.push(cardObj);
     res.status(200).send(data);
   }

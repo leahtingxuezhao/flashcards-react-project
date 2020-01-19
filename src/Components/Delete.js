@@ -16,11 +16,16 @@ class Delete extends Component {
           answer={element.answer}
           id={element.id}
           deleteCardFn={this.props.deleteCardFn}
+          updateCardFn={this.props.updateCardFn}
         />
       );
     });
 
-    return <div id="deleteList">{list}</div>;
+    return (
+      <div id="deleteAndUpdate">
+        <div id="deleteList">{list}</div>;
+      </div>
+    );
   }
 }
 

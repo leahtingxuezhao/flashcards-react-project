@@ -13,8 +13,8 @@ class App extends Component {
       data: [
         {
           id: 0,
-          question: "test",
-          answer: "test"
+          question: "what is a hash table?",
+          answer: "An object that has keys and values (a dictionary)"
         }
       ]
     };
@@ -33,13 +33,15 @@ class App extends Component {
   };
 
   updateCard = (id, question, answer) => {
-    axios.put(`/api/data/${id}`, { question }, { answer }).then(results => {
+    axios.put(`/api/data/${id}`, { question, answer }).then(results => {
+      console.log("data :", results.data);
       this.setState({ data: results.data });
     });
   };
 
   createCard = (question, answer) => {
-    axios.post("/api/data", { question }, { answer }).then(results => {
+    console.log("answer :", answer);
+    axios.post("/api/data", { question, answer }).then(results => {
       this.setState({ data: results.data });
     });
   };
@@ -51,12 +53,19 @@ class App extends Component {
       <div className="App">
         <Header />
         <div id="mainpage">
-          <img src="https://images.unsplash.com/photo-1566640240577-181c1793dad3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" />
+          <img
+            src="https://images.unsplash.com/photo-1566640240577-181c1793dad3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            alt="backgroundPic"
+          />
         </div>
         <div className="container">
           <OneCard data={data} />
           <Add createCardFn={this.createCard} />
-          <Delete data={data} deleteCardFn={this.deleteCard} />
+          <Delete
+            data={data}
+            deleteCardFn={this.deleteCard}
+            updateCardFn={this.updateCard}
+          />
         </div>
       </div>
     );
