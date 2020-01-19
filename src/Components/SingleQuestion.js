@@ -5,7 +5,8 @@ class SingleQuestion extends Component {
     super(props);
     this.state = {
       question: "",
-      answer: ""
+      answer: "",
+      show: false
     };
   }
   updateQuestion(val) {
@@ -14,6 +15,33 @@ class SingleQuestion extends Component {
   updateAnswer(val) {
     this.setState({ answer: val });
   }
+
+  handleTextBox = () => {
+    if (this.state.show === true) {
+      return (
+        <div>
+          <textarea
+            rows="4"
+            cols="50"
+            className="updateNewCardInput"
+            onChange={e => this.updateQuestion(e.target.value)}
+          >
+            {this.props.question}
+          </textarea>
+          <textarea
+            rows="4"
+            cols="50"
+            className="updateNewCardInput"
+            onChange={e => this.updateAnswer(e.target.value)}
+          >
+            {this.props.answer}
+          </textarea>
+          <button onClick={this.handleClickUpdate}>Submit</button>
+        </div>
+      );
+    } else {
+    }
+  };
 
   handleClickUpdate = () => {
     const getUpdatedQuestion = () => {
@@ -34,6 +62,11 @@ class SingleQuestion extends Component {
     const answer = getUpdatedAnswer();
     const { id, updateCardFn } = this.props;
     updateCardFn(id, question, answer);
+    this.setState({ show: false });
+  };
+
+  handleUpdateButton = () => {
+    this.setState({ show: true });
   };
 
   render() {
@@ -43,33 +76,22 @@ class SingleQuestion extends Component {
       <div>
         <div id="singleQuestionWrap">
           <li>{this.props.question}</li>
-          <button className="update-button">Update</button>
-          <button
-            className="delete-button"
-            onClick={() => this.props.deleteCardFn(this.props.id)}
-          >
-            Delete
-          </button>
+          <div if="updateAndDeleteButtonWrap">
+            <button
+              className="update-button"
+              onClick={e => this.handleUpdateButton()}
+            >
+              Update
+            </button>
+            <button
+              className="delete-button"
+              onClick={() => this.props.deleteCardFn(this.props.id)}
+            >
+              Delete
+            </button>
+          </div>
         </div>
-        <div>
-          <textarea
-            rows="4"
-            cols="50"
-            className="updateNewCardInput"
-            onChange={e => this.updateQuestion(e.target.value)}
-          >
-            {this.props.question}
-          </textarea>
-          <textarea
-            rows="4"
-            cols="50"
-            className="updateNewCardInput"
-            onChange={e => this.updateAnswer(e.target.value)}
-          >
-            {this.props.answer}
-          </textarea>
-          <button onClick={this.handleClickUpdate}>Submit</button>
-        </div>
+        <div>{this.handleTextBox()}</div>
       </div>
     );
   }
