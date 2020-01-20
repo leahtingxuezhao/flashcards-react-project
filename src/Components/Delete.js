@@ -23,7 +23,7 @@ class Delete extends Component {
 
     return (
       <div id="deleteAndUpdate">
-        <div id="deleteList">{list}</div>;
+        <div id="deleteList">{list}</div>
       </div>
     );
   }

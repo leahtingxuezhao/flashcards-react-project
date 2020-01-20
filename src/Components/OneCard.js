@@ -4,7 +4,8 @@ class OneCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      index: 0
+      index: 0,
+      data: [{ answer: "", question: "" }]
     };
   }
 
@@ -27,8 +28,11 @@ class OneCard extends Component {
   render() {
     const { data } = this.props;
     const { index } = this.state;
-    console.log(data[index]);
-    console.log(this.state.count);
+    if (data.length < 1) {
+      this.setState.index = 0;
+      data.push({ answer: "", question: "" });
+    }
+
     return (
       <div className="oneBoxContainer">
         <div id="green-box"></div>

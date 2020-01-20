@@ -15,7 +15,7 @@ module.exports = {
   },
   deleteCard: (req, res) => {
     const { id } = req.params;
-    console.log(id);
+    console.log("deleteCard index", id);
     const index = data.findIndex(element => element.id === +id);
     data.splice(index, 1);
     res.status(200).send(data);

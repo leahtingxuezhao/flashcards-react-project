@@ -265,6 +265,12 @@ li {
   font-size: 10px;
   background-color: #bfd7ea;
 }
+#submitButton {
+  border-radius: 5px;
+  font-size: 10px;
+  background-color: #bfd7ea;
+  opacity: 80%;
+}
 
 #updateAndDeleteButtonWrap {
   display: flex;

@@ -36,10 +36,11 @@ class SingleQuestion extends Component {
           >
             {this.props.answer}
           </textarea>
-          <button onClick={this.handleClickUpdate}>Submit</button>
+          <button id="submitButton" onClick={this.handleClickUpdate}>
+            Submit
+          </button>
         </div>
       );
-    } else {
     }
   };
 
