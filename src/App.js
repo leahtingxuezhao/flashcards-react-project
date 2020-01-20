@@ -21,29 +21,49 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get("/api/data").then(results => {
-      this.setState({ data: results.data });
-    });
+    axios
+      .get("/api/data")
+      .then(results => {
+        this.setState({ data: results.data });
+      })
+      .catch(error => {
+        console.log("ERROR", error);
+      });
   }
 
   deleteCard = id => {
-    axios.delete(`/api/data/${id}`).then(results => {
-      this.setState({ data: results.data });
-    });
+    axios
+      .delete(`/api/data/${id}`)
+      .then(results => {
+        this.setState({ data: results.data });
+      })
+      .catch(error => {
+        console.log("ERROR", error);
+      });
   };
 
   updateCard = (id, question, answer) => {
-    axios.put(`/api/data/${id}`, { question, answer }).then(results => {
-      console.log("data :", results.data);
-      this.setState({ data: results.data });
-    });
+    axios
+      .put(`/api/data/${id}`, { question, answer })
+      .then(results => {
+        console.log("data :", results.data);
+        this.setState({ data: results.data });
+      })
+      .catch(error => {
+        console.log("ERROR", error);
+      });
   };
 
   createCard = (question, answer) => {
     console.log("answer :", answer);
-    axios.post("/api/data", { question, answer }).then(results => {
-      this.setState({ data: results.data });
-    });
+    axios
+      .post("/api/data", { question, answer })
+      .then(results => {
+        this.setState({ data: results.data });
+      })
+      .catch(error => {
+        console.log("ERROR", error);
+      });
   };
 
   render() {
